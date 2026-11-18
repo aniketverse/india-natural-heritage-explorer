@@ -1,0 +1,789 @@
+[
+  {
+    "id": "NP001",
+    "name": "Kaziranga National Park",
+    "category": "National Park",
+    "state": "Assam",
+    "district": "Golaghat, Nagaon, Biswanath and Sonitpur",
+    "year": "1974",
+    "area_km2": 914.0,
+    "ecosystem": "Brahmaputra floodplain grassland and wetland",
+    "species": [
+      "Greater one-horned rhinoceros",
+      "Asian elephant",
+      "Wild water buffalo",
+      "Bengal tiger"
+    ],
+    "summary": "A globally important floodplain landscape known for its large population of the greater one-horned rhinoceros.",
+    "coordinates": [
+      26.5775,
+      93.1711
+    ],
+    "source": "https://whc.unesco.org/en/list/337/"
+  },
+  {
+    "id": "NP002",
+    "name": "Jim Corbett National Park",
+    "category": "National Park",
+    "state": "Uttarakhand",
+    "district": "Nainital and Pauri Garhwal",
+    "year": "1936",
+    "area_km2": 520.8,
+    "ecosystem": "Shivalik foothills, sal forest and riverine habitat",
+    "species": [
+      "Bengal tiger",
+      "Asian elephant",
+      "Gharial",
+      "Hog deer"
+    ],
+    "summary": "India's oldest national park and a core component of the Corbett Tiger Reserve landscape.",
+    "coordinates": [
+      29.53,
+      78.7747
+    ],
+    "source": "https://corbettonationalpark.in/"
+  },
+  {
+    "id": "NP003",
+    "name": "Gir National Park",
+    "category": "National Park",
+    "state": "Gujarat",
+    "district": "Junagadh and Gir Somnath",
+    "year": "1975",
+    "area_km2": 258.7,
+    "ecosystem": "Dry deciduous forest and scrub",
+    "species": [
+      "Asiatic lion",
+      "Leopard",
+      "Striped hyena",
+      "Chital"
+    ],
+    "summary": "The last natural stronghold of the Asiatic lion.",
+    "coordinates": [
+      21.1243,
+      70.8242
+    ],
+    "source": "https://girlion.gujarat.gov.in/"
+  },
+  {
+    "id": "NP004",
+    "name": "Kanha National Park",
+    "category": "National Park",
+    "state": "Madhya Pradesh",
+    "district": "Mandla and Balaghat",
+    "year": "1955",
+    "area_km2": 940.0,
+    "ecosystem": "Sal forest, meadows and bamboo woodland",
+    "species": [
+      "Barasingha",
+      "Bengal tiger",
+      "Indian gaur",
+      "Dhole"
+    ],
+    "summary": "Known for its hard-ground barasingha recovery and extensive central Indian forest landscape.",
+    "coordinates": [
+      22.3345,
+      80.6115
+    ],
+    "source": "https://forest.mponline.gov.in/"
+  },
+  {
+    "id": "NP005",
+    "name": "Sundarbans National Park",
+    "category": "National Park",
+    "state": "West Bengal",
+    "district": "South 24 Parganas",
+    "year": "1984",
+    "area_km2": 1330.1,
+    "ecosystem": "Tidal mangrove forest and estuary",
+    "species": [
+      "Royal Bengal tiger",
+      "Estuarine crocodile",
+      "Fishing cat",
+      "Spotted deer"
+    ],
+    "summary": "Part of the world's largest mangrove forest complex and a UNESCO World Heritage property.",
+    "coordinates": [
+      21.9497,
+      88.895
+    ],
+    "source": "https://whc.unesco.org/en/list/452/"
+  },
+  {
+    "id": "NP006",
+    "name": "Hemis National Park",
+    "category": "National Park",
+    "state": "Ladakh",
+    "district": "Leh",
+    "year": "1981",
+    "area_km2": 4400.0,
+    "ecosystem": "Trans-Himalayan cold desert and alpine steppe",
+    "species": [
+      "Snow leopard",
+      "Bharal",
+      "Tibetan wolf",
+      "Golden eagle"
+    ],
+    "summary": "A high-altitude protected landscape famous for snow leopard habitat.",
+    "coordinates": [
+      33.7,
+      77.6
+    ],
+    "source": "https://leh.nic.in/"
+  },
+  {
+    "id": "NP007",
+    "name": "Great Himalayan National Park",
+    "category": "National Park",
+    "state": "Himachal Pradesh",
+    "district": "Kullu",
+    "year": "1984",
+    "area_km2": 754.4,
+    "ecosystem": "Western Himalayan temperate and alpine ecosystems",
+    "species": [
+      "Western tragopan",
+      "Himalayan tahr",
+      "Snow leopard",
+      "Blue sheep"
+    ],
+    "summary": "A UNESCO-listed mountain conservation landscape spanning a range of Himalayan habitats.",
+    "coordinates": [
+      31.75,
+      77.55
+    ],
+    "source": "https://whc.unesco.org/en/list/1406/"
+  },
+  {
+    "id": "NP008",
+    "name": "Periyar National Park",
+    "category": "National Park",
+    "state": "Kerala",
+    "district": "Idukki and Pathanamthitta",
+    "year": "1982",
+    "area_km2": 350.0,
+    "ecosystem": "Western Ghats evergreen forest and reservoir",
+    "species": [
+      "Asian elephant",
+      "Bengal tiger",
+      "Nilgiri langur",
+      "Lion-tailed macaque"
+    ],
+    "summary": "A major Western Ghats forest landscape centred around the Periyar lake and reservoir.",
+    "coordinates": [
+      9.462,
+      77.171
+    ],
+    "source": "https://www.keralatourism.org/"
+  },
+  {
+    "id": "WLS001",
+    "name": "Pobitora Wildlife Sanctuary",
+    "category": "Wildlife Sanctuary",
+    "state": "Assam",
+    "district": "Morigaon",
+    "year": "1987",
+    "area_km2": 38.8,
+    "ecosystem": "Alluvial grassland and wetland",
+    "species": [
+      "Greater one-horned rhinoceros",
+      "Leopard",
+      "Wild boar",
+      "Migratory waterbirds"
+    ],
+    "summary": "A compact Brahmaputra floodplain sanctuary with a notable density of one-horned rhinoceros.",
+    "coordinates": [
+      26.245,
+      92.053
+    ],
+    "source": "https://forest.assam.gov.in/"
+  },
+  {
+    "id": "WLS002",
+    "name": "Bhimashankar Wildlife Sanctuary",
+    "category": "Wildlife Sanctuary",
+    "state": "Maharashtra",
+    "district": "Pune and Raigad",
+    "year": "1985",
+    "area_km2": 131.0,
+    "ecosystem": "Northern Western Ghats semi-evergreen forest",
+    "species": [
+      "Indian giant squirrel",
+      "Leopard",
+      "Barking deer",
+      "Malabar grey hornbill"
+    ],
+    "summary": "A Western Ghats sanctuary important for the Indian giant squirrel and forest biodiversity.",
+    "coordinates": [
+      19.072,
+      73.535
+    ],
+    "source": "https://mahaforest.gov.in/"
+  },
+  {
+    "id": "WLS003",
+    "name": "Katarniaghat Wildlife Sanctuary",
+    "category": "Wildlife Sanctuary",
+    "state": "Uttar Pradesh",
+    "district": "Bahraich",
+    "year": "1975",
+    "area_km2": 400.6,
+    "ecosystem": "Terai grassland, riverine forest and wetlands",
+    "species": [
+      "Gharial",
+      "Gangetic dolphin",
+      "Tiger",
+      "Swamp deer"
+    ],
+    "summary": "A Terai landscape along the Girwa and other river systems, supporting rare aquatic and terrestrial wildlife.",
+    "coordinates": [
+      28.35,
+      81.1
+    ],
+    "source": "https://upforest.gov.in/"
+  },
+  {
+    "id": "WLS004",
+    "name": "Ranganathittu Bird Sanctuary",
+    "category": "Bird Sanctuary",
+    "state": "Karnataka",
+    "district": "Mandya",
+    "year": "1940",
+    "area_km2": 0.67,
+    "ecosystem": "Riverine islands and wetland",
+    "species": [
+      "Painted stork",
+      "Spot-billed pelican",
+      "Asian openbill",
+      "River tern"
+    ],
+    "summary": "A cluster of river islands on the Cauvery, known for nesting waterbirds.",
+    "coordinates": [
+      12.424,
+      76.659
+    ],
+    "source": "https://karnatakaforest.gov.in/"
+  },
+  {
+    "id": "WLS005",
+    "name": "Vedanthangal Bird Sanctuary",
+    "category": "Bird Sanctuary",
+    "state": "Tamil Nadu",
+    "district": "Chengalpattu",
+    "year": "1936",
+    "area_km2": 0.3,
+    "ecosystem": "Freshwater irrigation tank and wetland",
+    "species": [
+      "Painted stork",
+      "Cormorants",
+      "Egrets",
+      "Herons"
+    ],
+    "summary": "One of India's best-known historic bird sanctuaries, centred on a seasonal tank.",
+    "coordinates": [
+      12.544,
+      79.859
+    ],
+    "source": "https://forests.tn.gov.in/"
+  },
+  {
+    "id": "WLS006",
+    "name": "Nalsarovar Bird Sanctuary",
+    "category": "Bird Sanctuary",
+    "state": "Gujarat",
+    "district": "Ahmedabad and Surendranagar",
+    "year": "1969",
+    "area_km2": 120.8,
+    "ecosystem": "Shallow freshwater lake and marsh",
+    "species": [
+      "Greater flamingo",
+      "Rosy pelican",
+      "Ducks",
+      "Waders"
+    ],
+    "summary": "A large seasonal wetland and important wintering ground for migratory waterbirds.",
+    "coordinates": [
+      22.8,
+      72.05
+    ],
+    "source": "https://forests.gujarat.gov.in/"
+  },
+  {
+    "id": "CR001",
+    "name": "Asan Conservation Reserve",
+    "category": "Conservation Reserve",
+    "state": "Uttarakhand",
+    "district": "Dehradun",
+    "year": "2005",
+    "area_km2": 4.4,
+    "ecosystem": "Riverine wetland and reservoir",
+    "species": [
+      "Ruddy shelduck",
+      "Red-crested pochard",
+      "Osprey",
+      "Waders"
+    ],
+    "summary": "India's first Ramsar site in the conservation-reserve category; an important bird habitat.",
+    "coordinates": [
+      30.433,
+      77.667
+    ],
+    "source": "https://forest.uk.gov.in/"
+  },
+  {
+    "id": "CR002",
+    "name": "Aghanashini Lion-tailed Macaque Conservation Reserve",
+    "category": "Conservation Reserve",
+    "state": "Karnataka",
+    "district": "Uttara Kannada",
+    "year": "2022",
+    "area_km2": 299.5,
+    "ecosystem": "Western Ghats evergreen and semi-evergreen forest",
+    "species": [
+      "Lion-tailed macaque",
+      "Leopard",
+      "Great hornbill",
+      "King cobra"
+    ],
+    "summary": "A large Western Ghats conservation landscape created to protect threatened rainforest biodiversity.",
+    "coordinates": [
+      14.35,
+      74.65
+    ],
+    "source": "https://karnatakaforest.gov.in/"
+  },
+  {
+    "id": "CMR001",
+    "name": "Keshopur-Miani Community Reserve",
+    "category": "Community Reserve",
+    "state": "Punjab",
+    "district": "Gurdaspur",
+    "year": "2017",
+    "area_km2": 3.4,
+    "ecosystem": "Marsh, seasonal ponds and agricultural wetland mosaic",
+    "species": [
+      "Waterfowl",
+      "Painted stork",
+      "Egrets",
+      "Ducks"
+    ],
+    "summary": "A community-managed wetland conservation area and Ramsar site.",
+    "coordinates": [
+      32.0,
+      75.4
+    ],
+    "source": "https://forest.punjab.gov.in/"
+  },
+  {
+    "id": "BR001",
+    "name": "Nilgiri Biosphere Reserve",
+    "category": "Biosphere Reserve",
+    "state": "Tamil Nadu / Kerala / Karnataka",
+    "district": "Nilgiris and adjoining districts",
+    "year": "1986",
+    "area_km2": 5520.0,
+    "ecosystem": "Western Ghats mosaic: evergreen, moist deciduous, shola and grassland",
+    "species": [
+      "Nilgiri tahr",
+      "Lion-tailed macaque",
+      "Asian elephant",
+      "Tiger"
+    ],
+    "summary": "India's first biosphere reserve, connecting several important protected areas across three states.",
+    "coordinates": [
+      11.4,
+      76.7
+    ],
+    "source": "https://moef.gov.in/"
+  },
+  {
+    "id": "BR002",
+    "name": "Pachmarhi Biosphere Reserve",
+    "category": "Biosphere Reserve",
+    "state": "Madhya Pradesh",
+    "district": "Narmadapuram, Betul and Chhindwara",
+    "year": "1999",
+    "area_km2": 4981.7,
+    "ecosystem": "Satpura highlands, sal and teak forest",
+    "species": [
+      "Gaur",
+      "Leopard",
+      "Giant squirrel",
+      "Sloth bear"
+    ],
+    "summary": "A central Indian highland landscape containing Satpura National Park and adjoining conservation areas.",
+    "coordinates": [
+      22.467,
+      78.433
+    ],
+    "source": "https://moef.gov.in/"
+  },
+  {
+    "id": "TR001",
+    "name": "Tadoba-Andhari Tiger Reserve",
+    "category": "Tiger Reserve",
+    "state": "Maharashtra",
+    "district": "Chandrapur",
+    "year": "1993",
+    "area_km2": 1727.6,
+    "ecosystem": "Dry deciduous teak forest, bamboo and lakes",
+    "species": [
+      "Bengal tiger",
+      "Leopard",
+      "Sloth bear",
+      "Dhole"
+    ],
+    "summary": "A prominent central Indian tiger landscape with dry deciduous forest and water bodies.",
+    "coordinates": [
+      20.25,
+      79.35
+    ],
+    "source": "https://tadoba.gov.in/"
+  },
+  {
+    "id": "TR002",
+    "name": "Pench Tiger Reserve",
+    "category": "Tiger Reserve",
+    "state": "Madhya Pradesh / Maharashtra",
+    "district": "Seoni, Chhindwara and Nagpur",
+    "year": "1992",
+    "area_km2": 1179.6,
+    "ecosystem": "Teak forest, dry deciduous woodland and riverine habitat",
+    "species": [
+      "Bengal tiger",
+      "Indian leopard",
+      "Dhole",
+      "Gaur"
+    ],
+    "summary": "A transboundary tiger landscape spanning Madhya Pradesh and Maharashtra.",
+    "coordinates": [
+      21.65,
+      79.25
+    ],
+    "source": "https://ntca.gov.in/"
+  },
+  {
+    "id": "ER001",
+    "name": "Mysore Elephant Reserve",
+    "category": "Elephant Reserve",
+    "state": "Karnataka",
+    "district": "Mysuru and adjoining districts",
+    "year": "2002",
+    "area_km2": 6734.0,
+    "ecosystem": "Southern Western Ghats and connected forest corridors",
+    "species": [
+      "Asian elephant",
+      "Tiger",
+      "Leopard",
+      "Gaur"
+    ],
+    "summary": "An important elephant landscape linking forest habitats in southern Karnataka.",
+    "coordinates": [
+      12.3,
+      76.6
+    ],
+    "source": "https://moef.gov.in/"
+  },
+  {
+    "id": "RAM001",
+    "name": "Chilika Lake",
+    "category": "Ramsar Site",
+    "state": "Odisha",
+    "district": "Puri, Khordha and Ganjam",
+    "year": "1981",
+    "area_km2": 1165.0,
+    "ecosystem": "Brackish-water lagoon, mudflats and islands",
+    "species": [
+      "Irrawaddy dolphin",
+      "Flamingos",
+      "Migratory waterbirds",
+      "Olive ridley turtle"
+    ],
+    "summary": "A major brackish lagoon and internationally important wetland supporting fisheries and migratory birds.",
+    "coordinates": [
+      19.7,
+      85.3
+    ],
+    "source": "https://rsis.ramsar.org/ris/229"
+  },
+  {
+    "id": "RAM002",
+    "name": "Loktak Lake",
+    "category": "Ramsar Site",
+    "state": "Manipur",
+    "district": "Bishnupur",
+    "year": "1990",
+    "area_km2": 266.0,
+    "ecosystem": "Freshwater lake with floating phumdis",
+    "species": [
+      "Sangai deer",
+      "Waterbirds",
+      "Fish diversity"
+    ],
+    "summary": "Northeast India's largest freshwater lake, closely associated with floating phumdi wetlands and Keibul Lamjao.",
+    "coordinates": [
+      24.55,
+      93.8
+    ],
+    "source": "https://rsis.ramsar.org/ris/463"
+  },
+  {
+    "id": "RAM003",
+    "name": "East Kolkata Wetlands",
+    "category": "Ramsar Site",
+    "state": "West Bengal",
+    "district": "Kolkata and North 24 Parganas",
+    "year": "2002",
+    "area_km2": 125.0,
+    "ecosystem": "Urban sewage-fed wetlands and aquaculture ponds",
+    "species": [
+      "Waterbirds",
+      "Wetland fish",
+      "Aquatic plants"
+    ],
+    "summary": "A globally recognised urban wetland system that supports wastewater treatment, aquaculture and livelihoods.",
+    "coordinates": [
+      22.52,
+      88.45
+    ],
+    "source": "https://rsis.ramsar.org/ris/1208"
+  },
+  {
+    "id": "MAR001",
+    "name": "Gulf of Mannar Marine National Park",
+    "category": "Marine Protected Area",
+    "state": "Tamil Nadu",
+    "district": "Ramanathapuram and Thoothukudi",
+    "year": "1986",
+    "area_km2": 560.0,
+    "ecosystem": "Coral reefs, seagrass beds and islands",
+    "species": [
+      "Dugong",
+      "Sea turtles",
+      "Corals",
+      "Dolphins"
+    ],
+    "summary": "A chain of islands and shallow marine habitats with coral reefs and seagrass meadows.",
+    "coordinates": [
+      9.2,
+      79.1
+    ],
+    "source": "https://www.gulfofmannarbiosphere.org/"
+  },
+  {
+    "id": "MAR002",
+    "name": "Mahatma Gandhi Marine National Park",
+    "category": "Marine Protected Area",
+    "state": "Andaman and Nicobar Islands",
+    "district": "South Andaman",
+    "year": "1983",
+    "area_km2": 281.5,
+    "ecosystem": "Tropical island, coral reef and seagrass habitat",
+    "species": [
+      "Corals",
+      "Reef fish",
+      "Sea turtles",
+      "Dugong"
+    ],
+    "summary": "A marine protected landscape around islands off the South Andaman coast.",
+    "coordinates": [
+      11.58,
+      92.6
+    ],
+    "source": "https://andaman.gov.in/"
+  },
+  {
+    "id": "UNESCO001",
+    "name": "Western Ghats",
+    "category": "UNESCO Natural Heritage",
+    "state": "Maharashtra / Goa / Karnataka / Kerala / Tamil Nadu",
+    "district": "Multiple districts",
+    "year": "2012",
+    "area_km2": null,
+    "ecosystem": "Tropical montane, evergreen forest, shola and grassland",
+    "species": [
+      "Lion-tailed macaque",
+      "Nilgiri tahr",
+      "Asian elephant",
+      "Endemic amphibians"
+    ],
+    "summary": "A serial World Heritage property recognised for exceptional biodiversity and endemism.",
+    "coordinates": [
+      10.5,
+      76.5
+    ],
+    "source": "https://whc.unesco.org/en/list/1342/"
+  },
+  {
+    "id": "UNESCO002",
+    "name": "Khangchendzonga National Park",
+    "category": "UNESCO Mixed Heritage",
+    "state": "Sikkim",
+    "district": "Mangan and Gyalshing",
+    "year": "2016",
+    "area_km2": 1784.0,
+    "ecosystem": "Eastern Himalayan alpine, subalpine and glacial ecosystems",
+    "species": [
+      "Snow leopard",
+      "Red panda",
+      "Himalayan musk deer",
+      "Himalayan blue sheep"
+    ],
+    "summary": "India's first mixed World Heritage property, recognised for natural and cultural values.",
+    "coordinates": [
+      27.7,
+      88.2
+    ],
+    "source": "https://whc.unesco.org/en/list/1513/"
+  },
+  {
+    "id": "BHS001",
+    "name": "Ameenpur Lake",
+    "category": "Biodiversity Heritage Site",
+    "state": "Telangana",
+    "district": "Sangareddy",
+    "year": "2016",
+    "area_km2": null,
+    "ecosystem": "Urban freshwater lake and rocky outcrops",
+    "species": [
+      "Resident and migratory waterbirds",
+      "Wetland plants"
+    ],
+    "summary": "Recognised as a Biodiversity Heritage Site and noted for its urban wetland biodiversity.",
+    "coordinates": [
+      17.52,
+      78.33
+    ],
+    "source": "https://nbaindia.org/"
+  },
+  {
+    "id": "SAC001",
+    "name": "Mawphlang Sacred Grove",
+    "category": "Sacred Grove",
+    "state": "Meghalaya",
+    "district": "East Khasi Hills",
+    "year": "Traditional protection",
+    "area_km2": null,
+    "ecosystem": "Subtropical broadleaf sacred forest",
+    "species": [
+      "Orchids",
+      "Ferns",
+      "Mosses",
+      "Native trees"
+    ],
+    "summary": "A community-protected sacred forest demonstrating traditional conservation practices.",
+    "coordinates": [
+      25.45,
+      91.77
+    ],
+    "source": "https://meghalaya.gov.in/"
+  },
+  {
+    "id": "ECO001",
+    "name": "Banni Grasslands",
+    "category": "Grassland Ecosystem",
+    "state": "Gujarat",
+    "district": "Kutch",
+    "year": "—",
+    "area_km2": 2500.0,
+    "ecosystem": "Arid and semi-arid grassland and seasonal wetlands",
+    "species": [
+      "Chinkara",
+      "Desert fox",
+      "Indian wolf",
+      "Grassland birds"
+    ],
+    "summary": "One of India's largest natural grassland systems, shaped by arid climate and pastoral use.",
+    "coordinates": [
+      23.7,
+      69.8
+    ],
+    "source": "https://gujaratforest.gov.in/"
+  },
+  {
+    "id": "ECO002",
+    "name": "Pichavaram Mangroves",
+    "category": "Mangrove Ecosystem",
+    "state": "Tamil Nadu",
+    "district": "Cuddalore",
+    "year": "—",
+    "area_km2": 11.0,
+    "ecosystem": "Tidal mangrove forest and estuary",
+    "species": [
+      "Mangrove-associated fish",
+      "Crabs",
+      "Waterbirds",
+      "Mudskippers"
+    ],
+    "summary": "A well-known mangrove ecosystem with tidal creeks and islands.",
+    "coordinates": [
+      11.43,
+      79.79
+    ],
+    "source": "https://forests.tn.gov.in/"
+  },
+  {
+    "id": "ECO003",
+    "name": "Chandratal Wetland",
+    "category": "High-altitude Wetland",
+    "state": "Himachal Pradesh",
+    "district": "Lahaul and Spiti",
+    "year": "—",
+    "area_km2": 0.49,
+    "ecosystem": "High-altitude freshwater lake and alpine meadow",
+    "species": [
+      "Bar-headed goose",
+      "Himalayan mammals",
+      "Alpine plants"
+    ],
+    "summary": "A high-altitude Himalayan wetland in a cold desert landscape.",
+    "coordinates": [
+      32.48,
+      77.62
+    ],
+    "source": "https://rsis.ramsar.org/ris/1569"
+  },
+  {
+    "id": "BIO001",
+    "name": "Trans-Himalaya",
+    "category": "Biogeographic Zone",
+    "state": "Ladakh / Himachal Pradesh",
+    "district": "Leh, Kargil and Lahaul-Spiti",
+    "year": "—",
+    "area_km2": null,
+    "ecosystem": "Cold desert, alpine steppe and high-altitude wetlands",
+    "species": [
+      "Snow leopard",
+      "Kiang",
+      "Black-necked crane",
+      "Bharal"
+    ],
+    "summary": "A high-altitude biogeographic zone characterised by cold deserts, steppe and sparse alpine vegetation.",
+    "coordinates": [
+      33.5,
+      78.0
+    ],
+    "source": "https://wii.gov.in/"
+  },
+  {
+    "id": "BIO002",
+    "name": "Western Ghats",
+    "category": "Biogeographic Zone",
+    "state": "Maharashtra / Goa / Karnataka / Kerala / Tamil Nadu",
+    "district": "Multiple districts",
+    "year": "—",
+    "area_km2": null,
+    "ecosystem": "Tropical evergreen, moist deciduous, shola and montane grassland",
+    "species": [
+      "Lion-tailed macaque",
+      "Nilgiri tahr",
+      "Malabar civet",
+      "Endemic amphibians"
+    ],
+    "summary": "A global biodiversity hotspot with high levels of endemism and major river catchments.",
+    "coordinates": [
+      10.5,
+      76.5
+    ],
+    "source": "https://wii.gov.in/"
+  }
+]

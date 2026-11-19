@@ -1,96 +1,15 @@
-const DATA_URL = "data/sites.json";
-let allSites = [];
-let selectedId = null;
-let activeCategory = "";
-
-const $ = (id) => document.getElementById(id);
-const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const categories = [...new Set([])];
-
-async function init(){
-  try{
-    const res = await fetch(DATA_URL);
-    if(!res.ok) throw new Error("Could not load directory data");
-    allSites = await res.json();
-    populateFilters();
-    renderStats();
-    renderChips();
-    render();
-    $("updated").textContent = "Starter directory · data checked for initial publication";
-  }catch(err){
-    $("cards").innerHTML = `<div class="loading">Directory data could not be loaded. Run this site through a local web server or GitHub Pages.</div>`;
-    console.error(err);
-  }
-}
-function populateFilters(){
-  [...new Set(allSites.map(s=>s.category))].sort().forEach(c=>{
-    const o=document.createElement("option");o.value=c;o.textContent=c;$("category-filter").append(o);
-  });
-  [...new Set(allSites.flatMap(s=>s.state.split(" / ")))].sort().forEach(st=>{
-    const o=document.createElement("option");o.value=st;o.textContent=st;$("state-filter").append(o);
-  });
-}
-function renderStats(){
-  $("total-count").textContent=allSites.length;
-  $("state-count").textContent=new Set(allSites.flatMap(s=>s.state.split(" / "))).size;
-  $("category-count").textContent=new Set(allSites.map(s=>s.category)).size;
-}
-function renderChips(){
-  const featured=["National Park","Wildlife Sanctuary","Bird Sanctuary","Tiger Reserve","Ramsar Site","Biosphere Reserve"];
-  $("quick-chips").innerHTML=`<button class="chip active" data-cat="">All places</button>`+featured.map(c=>`<button class="chip" data-cat="${esc(c)}">${esc(c)}</button>`).join("");
-  $("quick-chips").addEventListener("click",e=>{
-    const b=e.target.closest("[data-cat]");if(!b)return;
-    activeCategory=b.dataset.cat;$("category-filter").value=activeCategory;
-    document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x===b));render();
-  });
-}
-function filtered(){
-  const q=$("search").value.trim().toLowerCase(),cat=$("category-filter").value,state=$("state-filter").value,sort=$("sort-filter").value;
-  let list=allSites.filter(s=>{
-    const hay=[s.name,s.category,s.state,s.district,s.ecosystem,s.summary,...s.species].join(" ").toLowerCase();
-    return (!q||hay.includes(q))&&(!cat||s.category===cat)&&(!state||s.state.split(" / ").includes(state));
-  });
-  list.sort((a,b)=>sort==="state"?a.state.localeCompare(b.state)||a.name.localeCompare(b.name):sort==="area"?(b.area_km2||0)-(a.area_km2||0):a.name.localeCompare(b.name));
-  return list;
-}
-function render(){
-  const list=filtered();
-  $("result-count").textContent=`${list.length} of ${allSites.length} records`;
-  $("cards").innerHTML=list.map(s=>`<article class="place-card ${selectedId===s.id?"selected":""}" data-id="${esc(s.id)}" tabindex="0" role="button" aria-label="Explore ${esc(s.name)}">
-    <div class="card-top"><span class="tag">${esc(s.category)}</span><span class="arrow">↗</span></div>
-    <h3>${esc(s.name)}</h3><div class="location">${esc(s.state)} · ${esc(s.district)}</div>
-    <div class="card-bottom"><span>${esc(s.ecosystem)}</span><span>${s.area_km2?`${Number(s.area_km2).toLocaleString("en-IN")} km²`:"Details"} </span></div>
-  </article>`).join("");
-  $("empty-state").hidden=list.length!==0;
-  $("cards").style.display=list.length?"grid":"none";
-  $("cards").querySelectorAll(".place-card").forEach(card=>{
-    card.addEventListener("click",()=>selectSite(card.dataset.id));
-    card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();selectSite(card.dataset.id)}});
-  });
-  if(selectedId && list.some(s=>s.id===selectedId)) renderDetail(selectedId);
-  else if(!list.some(s=>s.id===selectedId)){selectedId=null;showEmptyDetail();}
-}
-function selectSite(id){selectedId=id;render();renderDetail(id);if(window.innerWidth<900)$("detail-panel").scrollIntoView({behavior:"smooth",block:"start"});}
-function showEmptyDetail(){$("detail-panel").innerHTML=`<div class="detail-empty"><span>✳</span><h3>Choose a place to explore</h3><p>Open any directory card to see its habitat, notable species, location and source reference.</p></div>`;}
-function renderDetail(id){
-  const s=allSites.find(x=>x.id===id);if(!s)return;
-  const map=`https://www.openstreetmap.org/?mlat=${s.coordinates[0]}&mlon=${s.coordinates[1]}#map=10/${s.coordinates[0]}/${s.coordinates[1]}`;
-  $("detail-panel").innerHTML=`<span class="tag">${esc(s.category)}</span><h3>${esc(s.name)}</h3><div class="detail-location">${esc(s.district)} · ${esc(s.state)}</div>
-  <p class="detail-summary">${esc(s.summary)}</p>
-  <div class="detail-meta"><div><span>Notification / year</span><strong>${esc(s.year||"Not specified")}</strong></div><div><span>Area</span><strong>${s.area_km2?`${Number(s.area_km2).toLocaleString("en-IN")} km²`:"Not verified"}</strong></div><div><span>Habitat</span><strong>${esc(s.ecosystem)}</strong></div><div><span>Directory ID</span><strong>${esc(s.id)}</strong></div></div>
-  <p style="font-size:9px;letter-spacing:.12em;color:#b6c7b4;margin:18px 0 8px">NOTABLE SPECIES / BIODIVERSITY</p><div class="species">${s.species.map(x=>`<span>${esc(x)}</span>`).join("")}</div>
-  <div class="detail-actions"><a href="${map}" target="_blank" rel="noreferrer">View map ↗</a><a href="${esc(s.source)}" target="_blank" rel="noreferrer">Source reference ↗</a><button id="save-btn">☆ Save place</button></div>`;
-  const saved=JSON.parse(localStorage.getItem("inh-saved")||"[]");
-  const btn=$("save-btn");if(saved.includes(id)){btn.textContent="★ Saved";btn.classList.add("saved")}
-  btn.addEventListener("click",()=>{
-    let arr=JSON.parse(localStorage.getItem("inh-saved")||"[]");
-    arr=arr.includes(id)?arr.filter(x=>x!==id):[...arr,id];localStorage.setItem("inh-saved",JSON.stringify(arr));
-    btn.textContent=arr.includes(id)?"★ Saved":"☆ Save place";btn.classList.toggle("saved",arr.includes(id));
-  });
-}
-$("search").addEventListener("input",render);
-$("category-filter").addEventListener("change",()=>{activeCategory=$("category-filter").value;document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.dataset.cat===activeCategory));render()});
-$("state-filter").addEventListener("change",render);
-$("sort-filter").addEventListener("change",render);
-$("clear-filters").addEventListener("click",()=>{$("search").value="";$("category-filter").value="";$("state-filter").value="";$("sort-filter").value="name";activeCategory="";document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active",x.dataset.cat===""));render()});
-init();
+(async()=>{
+const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const response=await fetch('data/sites.json');const sites=await response.json();
+const cats=[...new Set(sites.map(s=>s.category))].sort();const states=[...new Set(sites.flatMap(s=>s.state.split(' · ')))].sort();
+const catSelect=$('#category'),stateSelect=$('#state');cats.forEach(c=>catSelect.add(new Option(c,c)));states.forEach(s=>stateSelect.add(new Option(s,s)));
+const map=L.map('map',{scrollWheelZoom:true}).setView([22.5,81.2],5);L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+const markers=new Map();sites.forEach(s=>{if(Number.isFinite(s.lat)&&Number.isFinite(s.lng)){const m=L.marker([s.lat,s.lng]).addTo(map).bindPopup(`<b>${esc(s.name)}</b><br>${esc(s.category)} · ${esc(s.state)}<br><small>${esc(s.ecosystem)}</small>`);m.on('click',()=>profile(s));markers.set(s.id,m)}});
+const featured=['National Park','Wildlife Sanctuary','Bird Sanctuary','Tiger Reserve','Ramsar Wetland','Biosphere Reserve'];$('#chips').innerHTML='<button class="chip active" data-cat="">All places</button>'+featured.filter(c=>cats.includes(c)).map(c=>`<button class="chip" data-cat="${esc(c)}">${esc(c)}</button>`).join('');
+const counts={states:new Set(sites.flatMap(s=>s.state.split(' · '))).size,categories:cats.length,places:sites.length};$('#stats').innerHTML=`<div class="stat"><strong>${counts.places}</strong><small>Directory records</small></div><div class="stat"><strong>${counts.states}</strong><small>States / regions represented</small></div><div class="stat"><strong>${counts.categories}</strong><small>Categories</small></div><div class="stat"><strong>India</strong><small>Geographic scope</small></div>`;
+const insightData=[['Protected landscapes','National parks, sanctuaries, reserves and conservation areas'],['Wetlands & coasts','Lakes, marshes, lagoons, estuaries and mangroves'],['Mountain ecosystems','Himalayan, alpine and high-altitude cold desert habitats'],['Forest & grassland','Tropical forests, dry forests, savannas and grasslands']];$('#insightCards').innerHTML=insightData.map((x,i)=>`<article class="insight"><div class="big">0${i+1}</div><strong>${x[0]}</strong><p>${x[1]}</p></article>`).join('');
+function current(){const q=$('#search').value.toLowerCase().trim(),c=catSelect.value,s=stateSelect.value;let list=sites.filter(p=>(!c||p.category===c)&&(!s||p.state.split(' · ').includes(s))&&(!q||[p.name,p.category,p.state,p.ecosystem,p.species,p.description].join(' ').toLowerCase().includes(q)));const sort=$('#sort').value;list.sort((a,b)=>String(a[sort]||a.name).localeCompare(String(b[sort]||b.name)));return list}
+function render(){const list=current();$('#count').textContent=`${list.length} of ${sites.length} records`;const cards=$('#cards');cards.innerHTML=list.map(s=>`<article class="site-card" data-id="${esc(s.id)}"><span class="tag">${esc(s.category)}</span><h3>${esc(s.name)}</h3><span class="state">${esc(s.state)}</span><p class="habitat">${esc(s.ecosystem)}</p><div class="card-bottom"><span>${esc(s.species.split(',').slice(0,2).join(', '))}</span><span>Explore ↗</span></div></article>`).join('');$('#empty').hidden=!!list.length;$('#cards').hidden=!list.length;$('#stats').querySelector('.stat:first-child strong').textContent=list.length;markers.forEach((m,id)=>{const shown=list.some(s=>s.id===id);if(shown&&!map.hasLayer(m))m.addTo(map);if(!shown&&map.hasLayer(m))map.removeLayer(m)});cards.querySelectorAll('.site-card').forEach(el=>el.onclick=()=>{const s=sites.find(p=>p.id===el.dataset.id);profile(s);if(markers.has(s.id)){map.setView([s.lat,s.lng],7);markers.get(s.id).openPopup()}})}
+function profile(s){$('#profileContent').innerHTML=`<div class="profile-tag">${esc(s.category)}</div><h2>${esc(s.name)}</h2><div class="profile-state">${esc(s.state)}</div><p>${esc(s.description)}</p><div class="profile-grid"><div><small>Landscape / habitat</small><p>${esc(s.ecosystem)}</p></div><div><small>Species highlights</small><p>${esc(s.species)}</p></div><div><small>Area / boundary note</small><p>${esc(s.area)}</p></div><div><small>Suggested season</small><p>${esc(s.bestSeason)}</p></div><div><small>Coordinates</small><p>${s.lat.toFixed(4)}, ${s.lng.toFixed(4)}</p></div><div><small>Data quality</small><p>${esc(s.status)}</p></div></div><p><small>Records are preliminary and require official verification.</small></p><a class="profile-source" href="${esc(s.source)}" target="_blank" rel="noopener">Open reference source ↗</a><p><a href="https://www.openstreetmap.org/?mlat=${s.lat}&mlon=${s.lng}#map=9/${s.lat}/${s.lng}" target="_blank" rel="noopener">View on OpenStreetMap ↗</a></p>`;$('#profile').showModal()}
+$('#search').addEventListener('input',render);catSelect.addEventListener('change',()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x.dataset.cat===catSelect.value));render()});stateSelect.addEventListener('change',render);$('#sort').addEventListener('change',render);document.querySelectorAll('.chip').forEach(ch=>ch.onclick=()=>{catSelect.value=ch.dataset.cat;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===ch));render()});$('#closeProfile').onclick=()=>$('#profile').close();$('#profile').addEventListener('click',e=>{if(e.target===$('#profile'))$('#profile').close()});render();
+})();
